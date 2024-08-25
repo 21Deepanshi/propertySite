@@ -1,0 +1,19 @@
+/* Sodv1201 Group project August 22, 2024 - Deepanshi, Kajal and Kailan  */
+
+
+/* these divs are selected in this way as these divs area created dynamically from their arrays */
+.dynamicallyCreatedDiv div:nth-last-of-type(2) { /* this refers to the div that will display in the top right of the property display window in both the search page and view properties page */
+
+    /* border: 2px solid red; */
+    position: absolute;
+    right: 12px;
+    top: 5px;
+}
+.dynamicallyCreatedDiv div:last-of-type { /* this refers to the div that will display in the bottom right of the property display window in both the search page and view properties page */
+
+    /* border: 2px solid red; */
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+/* end of dynamically displayed div custom select */

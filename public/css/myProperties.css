@@ -1,0 +1,113 @@
+/* Sodv1201 Group project August 22, 2024 - Deepanshi, Kajal and Kailan  */
+#addNewPropertyOuterDiv{
+
+    position:relative;
+    /* this is supposed to be display none, for now it is flex, until the button has been programmed*/
+    /* display: none; */
+    display: none;
+
+}
+
+#cancelAddProperty {
+/* button to cancel the add property */
+    color: var(--accentColor1);
+    background-color: var(--mainContentColor);
+    font-size: 1.2em;
+    width: 25px;
+    Height: 25px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#addNewPropertyDiv {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: clamp(300px, 70vw, 800px);
+    margin: 15px auto; /* Center the form in its container */
+}
+
+#openAddPropertyDiv {
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto; 
+    /* margin: 20px auto 0px auto; */
+}
+
+/* Style for individual input fields and selects */
+.newPropInput, .numberInput{
+    width: clamp(200px, 45vw, 500px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select{
+    padding: 8px; 
+    border: 1px solid var(--inputBorder); 
+    border-radius: 4px; 
+    background-color: var(--inputBackground); 
+}
+
+/* Radio button */
+input[type="radio"]{
+    cursor: pointer;
+}
+
+/* Style for radio button labels */
+input[type="radio"] + label {
+    margin-right: 20px; 
+    cursor: pointer; 
+}
+
+/* Ensuring button is centered within its parent */
+#addNewPropertyButton {
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block; /* Make the button a block-level element */
+    margin: 20px auto; /* Center it with auto margins */
+}
+
+/* Style for labels */
+.propertyInputLabels label {
+    display: block;
+    font-weight: bold;
+}
+
+/* these divs are selected in this way as these divs area created dynamically from their arrays */
+.dynamicallyCreatedDiv div:nth-last-of-type(2) { /* this refers to the div that will display in the top right of the property display window in both the search page and view properties page */
+
+    /* border: 2px solid red; */
+    position: absolute;
+    right: 12px;
+    top: 5px;
+}
+.dynamicallyCreatedDiv div:last-of-type { /* this refers to the div that will display in the bottom right of the property display window in both the search page and view properties page */
+
+    /* border: 2px solid red; */
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+/* end of dynamically displayed div custom select */
+
+/* Styling for Edit and Remove Buttons */
+
+
+@media only screen and (max-width: 700px)
+{ 
+
+    /* the below 2 elements refer to the divs that will display in the property display window in both the search page and view properties page */
+    .dynamicallyCreatedDiv div:nth-last-of-type(2) { /* this position changes allows the items to neatly align in columns for small screens */
+
+        position: static;
+    }
+    .dynamicallyCreatedDiv div:last-of-type {
+    
+        position: static;
+    }
+}

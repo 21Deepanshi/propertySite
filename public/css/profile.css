@@ -1,0 +1,35 @@
+/* Sodv1201 Group project August 22, 2024 - Deepanshi, Kajal and Kailan  */
+.editProfileInputs{
+
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+#cancelEditProfile {
+
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    display:none;
+}
+
+#profileDisplay{
+
+    position: relative;
+    
+}
+
+#removeProfileButton {
+    position: absolute;
+    top: 45px; /* Position it below the edit button */
+    right: 5px;
+    margin-top: 40px;
+}
+
+#profileContainer {
+    
+    border-radius: 15px;
+    /* border: 2px solid red; */
+}

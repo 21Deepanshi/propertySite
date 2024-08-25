@@ -1,0 +1,225 @@
+/* Sodv1201 Group project August 22, 2024 - Deepanshi, Kajal and Kailan  */
+.dynamicallyCreatedDiv {
+
+    width: calc(100vw - calc(var(--filterContainer) + 110px));
+
+}
+
+#homePageBody{
+
+    /* ensures that the filter box doesn't break the screen*/
+    min-height: 940px;
+}
+
+#homePageTitle {
+
+    /* border: 2px solid black; */
+    position: relative;
+    align-items: center;
+}
+
+
+/* container that holds the advanced search filter container, the search bar and the search results*/
+#searchAndFilterContainer {
+
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-around;
+}
+
+#searchAndResultsContainer {
+
+    margin-left: var(--filterContainer); /*this keeps the results window of the search to the right of the filter window that is placed absolutely on the left */
+    /* width: calc(100vw - (var(--filterContainer) + 30px)); */
+
+}
+
+/* Add query for screen sizes less than 700px to change how advanced search filter behaves */
+#advancedSearchFilters { /* this is the window for the search filters */
+
+    width: var(--filterContainer);
+    height: min-content;
+    position: absolute; /* keeps the filter window floating on the left side */
+    align-items: baseline; /* this is overriding the align-items in class innerPageContent2 which this ID uses for standard color / padding */
+    top: 10px;
+    left: 10px;
+    border: 2px solid var(--accentColor1);
+}
+
+/* Label styling */
+#advancedSearchFilters label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--darkFont);
+}
+
+/* Select elements */
+#advancedSearchFilters select,
+#advancedSearchFilters input[type="text"],
+#advancedSearchFilters input[type="number"] {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 5px;
+    border: 1px solid var(--inputBorder);
+    border-radius: 5px;
+    background-color: var(--inputBackground);
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+/* Range Slider Styling */
+#filterPrice {
+    width: 100%;
+    margin-bottom: 15px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: var(--inputBackground);
+    border-radius: 5px;
+    outline: none;
+}
+
+#filterPrice::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--accentColor1);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Price Display Styling */
+#priceDisplay {
+    font-size: 1.1rem;
+    color: var(--darkFont);
+    margin-left: 10px;
+}
+
+/* Input field for text */
+#filterType {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid var(--inputBorder);
+    border-radius: 5px;
+    background-color: var(--inputBackground);
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#searchTab 
+{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid gray;
+}
+
+/* Container for the search input and button */
+#searchContainer{
+    
+    padding: 10px;
+}
+
+/* Search Input Styling */
+#searchInput {
+    flex: 1;
+    padding: 10px 15px; 
+    border: 1px solid var(--inputBorder); 
+    border-radius: 5px; 
+    width: 225px;
+    background-color: var(--inputBackground); 
+    font-size: 1rem;
+}
+
+/* used the same css as from view properties */
+/* these divs are selected in this way as these divs area created dynamically from their arrays */
+.dynamicallyCreatedDiv div:nth-last-of-type(2) { /* this refers to the div that will display in the top right of the property display window in both the search page and view properties page */
+
+    /* border: 2px solid red; */
+    position: absolute;
+    right: 12px;
+    top: 5px;
+}
+.dynamicallyCreatedDiv div:last-of-type { /* this refers to the div that will display in the bottom right of the property display window in both the search page and view properties page */
+
+    /* border: 2px solid red; */
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+/* end of dynamically displayed div custom select */
+
+
+/* Responsive Design */
+@media only screen and (max-width: 700px) {
+    #advancedSearchFilters {
+        padding: 10px;
+        left: 0px;
+        z-index: 2;
+        display: none;
+        
+    }
+
+    #searchAndResultsContainer {
+
+        margin-left: 0px; /*since the display window goes hidden, this container can use the left space */
+    }
+    
+    #searchTab 
+    {
+        background-color: var(--accentColor1);
+        border: 2px solid var(--buttonHoverBackground);
+        z-index: 2;
+        display: flex;
+        position: sticky;
+        top: 0;
+    }
+
+    #searchTab:hover
+    {
+        cursor: pointer;
+        background-color: var(--buttonHoverBackground);
+    }
+    .dynamicallyCreatedDiv { /* search container is hidden, so this container can maximize screen space */
+
+        width: 85vw;
+    
+    }
+
+    #advancedSearchFilters select, 
+    #filterType {
+        width: 100%;
+    }
+
+    /* these divs are selected in this way as these divs area created dynamically from their arrays */
+    .dynamicallyCreatedDiv div:nth-last-of-type(2) { /* this refers to the div that will display in the top right of the property display window in both the search page and view properties page */
+
+        /* border: 2px solid red; */
+        position: static;
+    }
+    .dynamicallyCreatedDiv div:last-of-type { /* this refers to the div that will display in the bottom right of the property display window in both the search page and view properties page */
+
+        /* border: 2px solid red; */
+        position: static;
+    }
+    /* end of dynamically displayed div custom select */
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}

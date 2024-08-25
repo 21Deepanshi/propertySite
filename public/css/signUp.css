@@ -1,0 +1,39 @@
+/* Sodv1201 Group project August 22, 2024 - Deepanshi, Kajal and Kailan  */
+/* Input fields */
+.newPropInput, #userPhoneInput {
+    width: clamp(200px, 45vw, 500px);
+    padding: 8px; 
+    border: 1px solid var(--inputBorder); 
+    border-radius: 5px; 
+    background-color: var(--inputBackground); 
+}
+
+select{
+    padding: 8px; 
+    border: 1px solid var(--inputBorder); 
+    border-radius: 5px; 
+    background-color: var(--inputBackground); 
+}
+
+.numberInput {
+    width: 100px; 
+    padding: 8px; 
+}
+
+input[type="radio"], .standardButton{
+    cursor: pointer;
+}
+
+/* Style for radio button labels */
+input[type="radio"] + label {
+    font-size: 1rem; 
+    margin-right: 20px; 
+    cursor: pointer; 
+}
+
+/* Responsive design for small screens */
+@media only screen and (max-width: 700px) {
+    .newPropInput {
+        width: 100%; /* Full width on smaller screens */
+    }
+}

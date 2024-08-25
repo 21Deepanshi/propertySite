@@ -1,0 +1,348 @@
+/* Sodv1201 Group project August 22, 2024 - Deepanshi, Kajal and Kailan  */
+/*Commented out borders are for my testing purposes  */
+:root {
+    --mainContentColor: #e3f4ff;
+    --pageInnerContent2: #c6d9e6;
+    --pageInnerContent3:#c6d9e6;
+    --accentColor1: #252330;
+    --accentColor2: #c2c0db;
+    --filterContainer: 230px;
+    --buttonBackground: #6e6799;
+    --buttonText: #ffffff;
+    --buttonHoverBackground: #c2c0db;
+    --buttonHoverText: #252330;
+    --inputBackground: #ffffff;
+    --inputBorder: #ccc;
+    --darkFont: #000000;
+}
+
+
+/* reset all margin and paddings to 0px so that they may be adjusted as needed */
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Cormorant", "serif";
+    font-weight: 600;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Tangerine", "serif";
+}
+
+/* the google font styles seemed to be a little small so all sizes are updated to adjust */
+h1 {
+    font-size: 2.8em;
+}
+h2 {
+    font-size: 2.5em;
+}
+h3 {
+    font-size: 2.2em;
+}
+h4 {
+    font-size: 2em;
+}
+h5 {
+    font-size: 1.8em;
+}
+h6 {
+    font-size: 1.5em;
+}
+p, li, a, input, label{
+    font-size: 1.1em;
+}
+
+
+li a {
+    text-decoration: none;
+    color: var(--darkFont);
+    color: white;
+    font-size: 1em;
+}
+
+li {
+
+    
+    list-style: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.smallInput{
+    
+    display: inline-block;
+    width: 85px;
+}
+
+.flexTwoColumn{
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainPageContent {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mainContentColor);
+    min-height: 100vh;  
+}
+
+.innerPageContent1 {
+    padding: 10px 10px;
+    background-color:var(--mainContentColor);
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.innerPageContent2 {
+    background-color: var(--pageInnerContent2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+
+
+.innerPageContent3 {
+    background-color: var(--mainContentColor);
+    margin: 10px;
+    padding: 10px;
+    /* border: 2px solid red; */
+    border-radius: 15px;
+}
+
+.innerPageContent3b {
+    background-color: var(--pageInnerContent3);
+    padding: 10px;
+}
+
+.centerAlignContent {
+
+    flex-grow: 1;
+    /* border: 2px solid red; */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerAlignContentColumn {
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+/* ensures the window stays a reasonable size, and adjusts smaller for small screens */
+.newPropInput {
+    width: clamp(200px, 45vw, 500px);
+}
+
+.numberInput {
+
+    /* number input box set to be smaller */
+    width: 60px;
+}
+
+/* some standard settings for buttons on the pages */
+.standardButton {
+
+    border: 1px solid var(--accentColor1);
+    font-size: 1rem; 
+    border-radius: 8px;
+    padding: 8px 12px; 
+    background-color: var(--accentColor1);
+    color: var(--buttonText);
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.standardButton:hover {
+
+    transition: background-color 0.2s ease;
+    background-color: var(--buttonHoverBackground);
+    color: var(--buttonHoverText);
+
+}
+
+.addFlexRowProperty {
+
+    display: flex;
+}
+
+.propertyInputLabels{
+
+    width: clamp(85px, 22vw, 275px);
+}
+
+.mouseHover:hover{
+
+    cursor: pointer;
+    box-shadow: 0px 0px 15px rgba(0,0,0, 0.3);
+}
+
+.pageNavigation {  
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}  
+
+.pageNavigation li {
+    padding: 0px min(1vw, 15px);
+}
+
+.pageHeader {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+
+#headerBar {
+
+    display: flex;
+    justify-content: space-between;
+    background-color:var(--accentColor1);
+    padding: 10px 10px;
+}
+
+
+#headerTitle{
+
+    color: white;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+
+#LogoDiv:hover{
+
+    cursor: pointer;
+}
+
+.headerSections {
+
+    display: flex;
+    margin: 2px;
+
+}
+
+#headerLogo{
+
+    height: 65px;
+    display: inline-block;
+    margin: 5px;
+}
+
+#createAccount, #profileLink{
+
+    border-left: 2px solid white;
+}
+
+#footerBar {
+    color: white;
+    background-color: var(--accentColor1);
+    padding: 10px 10px;
+    margin-top: auto;
+}
+
+
+.dynamicallyCreatedDiv {
+
+    /* display: flex; */
+    border-radius: 20px;
+    width: clamp(300px, 70vw, 800px);
+    position: relative;
+}
+
+/* added css for profile page */
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 5px; 
+    height: 5px;
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background-color: var(--accentColor1);
+}
+
+/* Thumb (scrollable part) */
+::-webkit-scrollbar-thumb {
+    background-color: var(--pageInnerContent2); 
+    border-radius: 6px; 
+}
+
+/* i hide it innitially when we will click on edit profile the inbox will show or either we can display it as it is now on browser */
+/* .hidden {
+    display: none;
+} */
+
+
+/* Responsive Design */
+@media only screen and (max-width: 700px) {
+    .profileSection {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #profileImageContainer,
+    #profileActionsContainer {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #profileImage {
+        width: 100px; /* Adjust size for smaller screens */
+        height: 100px;
+    }
+
+    #uploadImageForm {
+        width: 100%;
+        left: 0; /* Center form on small screens */
+        top: auto;
+        transform: none;
+    }
+
+    #headerTitle {
+
+        display: none;
+    }
+
+    .addFlexRowProperty { /* this changes the property inputs to align in neat columns instead of rows. For small screens */
+        flex-direction: column;
+    }
+    /* the input fields need to be adjusted to a large size since they will now be in a column instead of side by side */
+    .newPropInput {
+        width: clamp(200px, 65vw, 500px);
+    }
+
+    .propertyInputLabels{ /* allow the labels more space for small screens so text doesn't wrap and cramp */
+
+        width: clamp(175px, 50vw, 450px); 
+    }
+
+
+
+@media only screen and (max-width: 500px)
+{ 
+    #headerBar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+}

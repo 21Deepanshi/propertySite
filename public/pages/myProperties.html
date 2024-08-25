@@ -1,0 +1,203 @@
+<!-- Sodv1201 Group project August 22, 2024 - Deepanshi, Kajal and Kailan -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>View Properties</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Deepanshi, Kajal, and Kailan">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/myProperties.css">
+    <!-- https://fonts.google.com/icons?selected=Material+Symbols+Outlined:home:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%235f6368 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="mainPageContent">
+        <div id="headerBar">
+            <div class="headerSections" id="LogoDiv">
+                <!-- Logo image was created here https://logodesign.ai/create/choose-logo -->
+                <img id="headerLogo" src="img/logo.png">  
+                <div id="headerTitle">
+                    <h5>À la mode Atelier</h5>
+                    <h5>Comfort meets style</h5>
+                </div>
+            </div>
+            
+
+            <ul class="pageNavigation headerSections" id="mainNav">
+                <li><a href="/">Home</a></li>
+                <!-- Include the id to the login button -->                    
+            </ul>
+            <ul class="pageNavigation headerSections">
+                <li id="loginButtonContainer"><a href="/logIn" id="loginButton">Log in</a></li>
+                <li id="logoutButtonContainer" style="display:none;"><a href="#" id="logoutButton" onclick="logoutUser()">Logout</a></li>
+                <li id="createAccount"><a href="/createAccount">Create Account</a></li>
+                <li id="profileLink"><a href="/profile">Profile</a></li>
+                <!-- Try to create log out button and make its display none. Why not in styles.css file as the css is read first by dom, so, it always hide the logout button whenever we run this file -->
+            </ul>
+
+        </div>
+
+        <div class="pageHeader">
+            <h1>My Properties</h1>
+        </div>
+        
+        <div class="innerPageContent1">
+            
+            <div class="innerPageContent2" id="properties">
+            </div>
+            <!-- put the button outside of the properties container so that it is not deleted -->
+            <button class="standardButton" id="openAddPropertyDiv">Add New Property</button>
+        </div>
+        <div class="innerPageContent1">
+            <div class="innerPageContent2" id="addNewPropertyOuterDiv">
+                <button id="cancelAddProperty">X</button>
+                <form id="propertyForm" action="/upload" enctype="multipart/form-data" method="post"><!--Made changes in the form +-->
+                    <div class="innerPageContent3" id="addNewPropertyDiv">
+                        <!-- Property input fields -->
+
+                        <div class="addFlexRowProperty">
+                            <div class="propertyInputLabels">
+                                <label for="propertyNameInput">Property Name: </label>
+                            </div>
+                            <input type="text" placeholder="My Art Studio" class="newPropInput" id="propertyNameInput" required value="Sweet Sounds" >
+                        </div>
+                        <br>
+                        <div class="addFlexRowProperty">
+                            <div class="propertyInputLabels">
+                                <label for="propertyAddressInput">Property Address: </label>
+                            </div>
+                            <input type="text" placeholder="123 Main street" class="newPropInput" id="propertyAddressInput" required value="32 4th street">
+                        </div>
+                        <br>
+                        <div class="addFlexRowProperty">
+                            <div class="propertyInputLabels">
+                                <label for="propertyCityInput">City: </label>
+                            </div>
+                            <input type="text" placeholder="Calgary" class="newPropInput" id="propertyCityInput" required value="Calgary">
+                        </div>
+                        <br>
+                        <div class="addFlexRowProperty">
+                            <div class="propertyInputLabels">
+                                <label for="propertyProvinces">Province: </label>
+                            </div>
+                            <div>
+                                <select name="provinces" id="propertyProvinces" required>
+                                    <option value=""></option>
+                                    <option value="AB">AB</option>
+                                    <option value="BC">BC</option>
+                                    <option value="MB">MB</option>
+                                    <option value="NB">NB</option>
+                                    <option value="NL">NL</option>
+                                    <option value="NS">NS</option>
+                                    <option value="NT">NT</option>
+                                    <option value="NU">NU</option>
+                                    <option value="ON">ON</option>
+                                    <option value="PE">PE</option>
+                                    <option value="QC">QC</option>
+                                    <option value="SK">SK</option>
+                                    <option value="YT">YT</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="addFlexRowProperty">
+                            <div class="propertyInputLabels">
+                                <label for="propertyTypeInput">Type: </label>
+                            </div>
+                            <input type="text" placeholder="Art studio, Recording studio etc.." class="newPropInput" id="propertyTypeInput" required value="Recording Studio">
+                        </div>
+                        <br>
+                        <div class="addFlexRowProperty">
+                            <div class="propertyInputLabels">
+                                <label for="propertAreaInput">Square Meters: </label>
+                            </div>
+                            <input type="number" placeholder="400" id="propertAreaInput" class="numberInput" required value="400">
+                        </div>
+                        <br>
+                        <div class="addFlexRowProperty">
+                            <div class="propertyInputLabels">
+                                <label for="propertyMaxOccupancyInput">Maximum Occupants: </label>
+                            </div>
+                            <input type="number" placeholder="5" id="propertyMaxOccupancyInput" class="numberInput" required value="5">
+                        </div>
+                        <br>
+                        <div class="addFlexRowProperty">
+                            <div class="propertyInputLabels">
+                                <label>Parking: </label>
+                            </div>
+                            <div>
+                                <input type="radio" name="parking" value="yes" id="propertyParkingYes" required checked>
+                                <label for="propertyParkingYes">Yes</label>
+                                <input type="radio" name="parking" value="no" id="propertyParkingNo">
+                                <label for="propertyParkingNo">No</label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="addFlexRowProperty">
+                            <div class="propertyInputLabels">
+                                <label>Public Transport: </label>
+                            </div>
+                            <div>
+                                <input type="radio" name="transport" value="yes" id="propertyTransportYes" required checked>
+                                <label for="propertyTransportYes">Yes</label>
+                                <input type="radio" name="transport" value="no" id="propertyTransportNo">
+                                <label for="propertyTransportNo">No</label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="addFlexRowProperty">
+                            <div class="propertyInputLabels">
+                                <label for="propertyPriceInput">Price (per term): </label>
+                            </div>
+                            <input type="number" placeholder="295.99" class="numberInput" id="propertyPriceInput" required value="200">
+                        </div>
+                        <br>
+                        <div class="addFlexRowProperty">
+                            <div class="propertyInputLabels">
+                                <label for="rentalTermSelect">Rental Term: </label>
+                            </div>
+                            <div>
+                                <select name="rentalTerm" id="rentalTermSelect" required>
+                                    <!-- <option value=""></option> -->
+                                
+                                    <option value="Hourly">Hourly</option>
+                                    <option value="Daily">Daily</option>
+                                    <option value="Weekly">Weekly</option>
+                                    <option value="Monthly">Monthly</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="addFlexRowProperty">
+                            <div class="propertyInputLabels">
+                                <label>Available Now: </label>
+                            </div>
+                                <input type="radio" name="availability" value="yes" id="propertyAvailableYes" required checked>
+                                <label for="propertyAvailableYes">Yes</label>
+                                <input type="radio" name="availability" value="no" id="propertyAvailableNo">
+                                <label for="propertyAvailableNo">No</label>
+                        </div>
+                        <label id ="propertyInputLabels">Choose File:
+                        <input type="file" id="propertyImageInput" name="imageFileName" accept="image/*">
+                        </label>
+                    </div>
+                    <div>
+                        <input type="submit" class="standardButton" id="addNewPropertyButton" value="Add Property"></input>
+                    </div>
+                </form>
+                <div id="imageContainer"></div> <!-- Container to display images -->
+            </div>
+        </div>
+        <div id="footerBar">
+            <p>&copy; 2024 DKK All rights reserved!</p>
+            <p>social media social media!</p>
+        </div>
+    </div>
+    <script src = "../js/common.js"></script>
+    <script src="../js/myProperties.js"></script>
+    
+</body>
+</html>

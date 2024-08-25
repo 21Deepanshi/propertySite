@@ -1,0 +1,159 @@
+<!-- Sodv1201 Group project August 22, 2024 - Deepanshi, Kajal and Kailan -->
+<DOCTYPE html> 
+<html lang="en">
+<head>
+    <title>Sodv1201 Group Project. Deepanshi, Kajal, and Kailan</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Deepanshi, Kajal, and Kailan">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/homeStyle.css">
+    <!-- https://fonts.google.com/icons?selected=Material+Symbols+Outlined:home:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%235f6368 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="mainPageContent" id="homePageBody">
+        
+        <div id="headerBar">
+            <div class="headerSections" id="LogoDiv">
+                <!-- Logo image was created here https://logodesign.ai/create/choose-logo -->
+                <img id="headerLogo" src="img/logo.png">  
+                <div id="headerTitle">
+                    <h5>À la mode Atelier</h5>
+                    <h5>Comfort meets style</h5>
+                </div>
+            </div>
+
+            <ul class="pageNavigation headerSections" id="mainNav">
+                <li><a href="/">Home</a></li>
+                
+                <!-- Include the id to the login button -->                    
+            </ul>
+            <ul class="pageNavigation headerSections">
+                <li id="loginButtonContainer"><a href="/logIn" id="loginButton">Log in</a></li>
+                <li id="logoutButtonContainer" style="display:none;"><a href="#" id="logoutButton" onclick="logoutUser()">Logout</a></li>
+                <li id="createAccount"><a href="/createAccount">Create Account</a></li>
+                <li id="profileLink"><a href="/profile">Profile</a></li>
+                <!-- Try to create log out button and make its display none. Why not in styles.css file as the css is read first by dom, so, it always hide the logout button whenever we run this file -->
+            </ul>
+            
+        </div>
+        <div id="searchTab">
+            <span class="material-symbols-outlined">search</span>
+        </div> 
+          
+        <div class="innerPageContent1 pageHeader">
+            
+            <h1>Welcome!</h1>
+            <p>Search from thousands of properties to choose a great location for your next art extravanganza</p>
+
+        </div>
+        <div class="innerPageContent1" id="searchAndFilterContainer">
+                      
+            <aside  class="innerPageContent2" id="advancedSearchFilters">
+                <div class="innerPageContent3">
+                    <!-- Some Changes I made for the advanced filter option and for fetch the data we need to use API -->
+                    <h4>Advanced Filters</h4>
+                    <label for="filterAvailability">Available Now:</label>
+                    <input type="checkbox" id="filterAvailability">
+                    <br>
+                    <label for="filterParking">Parking:</label>
+                    <input type="checkbox" id="filterParking">
+                    <br>
+                    <label for="filterTransport">Public Transport:</label>
+                    <input type="checkbox" id="filterTransport">
+                    <br>
+                    <label for="filterType">Type:</label>
+                    <input type="text" id="filterType" placeholder="Enter type">
+
+                    <label for="filterAddress">Address:</label>
+                    <input type="text" id="filterAddress" placeholder="Enter address"><br>
+
+                    <label for="filterCity">City:</label>
+                    <input type="text" id="filterCity" placeholder="Enter city"><br>
+                    
+                    <div class="flexTwoColumn"> 
+                        <label for="filterProvince">Province:</label>
+                        <div class="smallInput">
+                            <select name="provinces" id="filterProvince" required>
+                                <option value=""></option>
+                                <option value="AB">AB</option>
+                                <option value="BC">BC</option>
+                                <option value="MB">MB</option>
+                                <option value="NB">NB</option>
+                                <option value="NL">NL</option>
+                                <option value="NS">NS</option>
+                                <option value="NT">NT</option>
+                                <option value="NU">NU</option>
+                                <option value="ON">ON</option>
+                                <option value="PE">PE</option>
+                                <option value="QC">QC</option>
+                                <option value="SK">SK</option>
+                                <option value="YT">YT</option>
+                            </select>
+                        </div>
+                    </div>
+                   
+                    <!-- <input type="text" id="filterProvince" placeholder="Enter province"><br> -->
+
+                    <div class="flexTwoColumn">
+                        <label for="filterArea">Area (sqft):</label>
+                        <div class="smallInput">
+                            <input type="number" id="filterArea" placeholder="200"><br>
+                        </div>
+                    </div>
+                    <div class="flexTwoColumn">
+                        <label for="filterCapacity">Capacity:</label>
+                        <div class="smallInput">
+                            <input type="number" id="filterCapacity" placeholder="10"><br>
+                        </div>
+                    </div>
+                    <div class="flexTwoColumn">
+                        <label for="filterRentalTerm">Rental Term:</label>
+                        <div class="smallInput">
+                            <select name="RentalTerm" id="filterRentalTerm" required>
+                                <option value=""></option>
+                                <option value="Hourly">Hourly</option>
+                                <option value="Daily">Daily</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Monthly">Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <label for="filterPrice">Max Price:</label>
+                    <br>
+                    <br>
+                    <input type="range" id="filterPrice" min="0" max="10000" step="100" value="5000" oninput="updatePriceDisplay(this.value)">
+                    <span id="priceDisplay">$5000</span>
+                    <br>
+                    <br>
+                    <button class="standardButton" onclick="applyFilters()">Apply Filters</button>
+                </div>   
+            </aside>
+            <div class="innerPageContent2" id="searchAndResultsContainer">
+                <div id="searchContainer">
+                    <input type="search" id="searchInput" placeholder="Enter anything to search..">
+                    <button class="standardButton" onclick="performSearch()">Search</button>
+                </div>
+                <!-- div container used to display all properties or searched properties -->
+                <div id="resultsContainer" class="innerPageContent2">
+                     <!-- Properties will be dynamically added here -->
+                </div>
+            </div>   
+        </div>
+        
+        <div id="footerBar">
+            <p>&copy; 2024 DKK All rights reserved!</p>
+            <p>social meda social media!</p>
+        </div> 
+    </div>
+    
+    <script src = "js/common.js"></script>
+    <script src = "js/script.js"></script>
+</body>
+</html>

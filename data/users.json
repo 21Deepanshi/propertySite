@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1724295082170,
+    "firstName": "Kailan",
+    "lastName": "Bates",
+    "email": "kailanbates@gmail.com",
+    "phoneNumber": "444-555-5555",
+    "city": "Calgary",
+    "province": "AB",
+    "role": "Owner"
+  },
+  {
+    "id": 1724295452850,
+    "firstName": "Kailan",
+    "lastName": "Bates",
+    "email": "kailanbates2@gmail.com",
+    "phoneNumber": "444-555-5555",
+    "city": "Calgary",
+    "province": "AB",
+    "role": "Renter"
+  },
+  {
+    "id": 1724295569880,
+    "firstName": "Kailan",
+    "lastName": "Bates",
+    "email": "kailanbates3@gmail.com",
+    "phoneNumber": "344-555-6645",
+    "city": "Calgary",
+    "province": "AB",
+    "role": "Owner"
+  },
+  {
+    "id": 1724297642764,
+    "firstName": "Deepanshi",
+    "lastName": "Baliyan",
+    "email": "deepanshi@gmail.com",
+    "phoneNumber": "444-555-2200",
+    "city": "Calgary",
+    "province": "AB",
+    "role": "Owner"
+  },
+  {
+    "id": 1724339121524,
+    "firstName": "Sally",
+    "lastName": "Souther",
+    "email": "sallys@gmail.com",
+    "phoneNumber": "123-456-7890",
+    "city": "Saskatoon",
+    "province": "AB",
+    "role": "Owner"
+  },
+  {
+    "id": 1724339513213,
+    "firstName": "renter",
+    "lastName": "rentee",
+    "email": "renter@gmail.com",
+    "phoneNumber": "123-456-7890",
+    "city": "Calgary",
+    "province": "AB",
+    "role": "Renter"
+  }
+]
