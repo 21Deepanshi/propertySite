@@ -1,4 +1,6 @@
 Application Setup and User Experience Documentation
+
+
 Step 1: Run the Application
 To start the application, open your terminal and run the following command:
 
